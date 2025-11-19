@@ -1,0 +1,56 @@
+{
+  "name": "n8n-nodes-nova-web-grounding",
+  "version": "1.0.0",
+  "description": "n8n community node for Amazon Nova Web Grounding",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/n8n-nodes-nova-web-grounding",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yansonz/n8n-nodes-nova-web-grounding.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yansonz/n8n-nodes-nova-web-grounding/issues"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0 <23.0.0"
+  },
+  "scripts": {
+    "build": "tsc && mkdir -p dist/nodes/NovaWebGrounding && mv dist/NovaWebGrounding.node.js dist/nodes/NovaWebGrounding/ && mv dist/NovaWebGrounding.node.d.ts dist/nodes/NovaWebGrounding/ && cp nodes/NovaWebGrounding/NovaWebGrounding.node.json dist/nodes/NovaWebGrounding/ && cp nodes/NovaWebGrounding/nova-web-grounding.svg dist/nodes/NovaWebGrounding/",
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist",
+    "nodes"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/NovaWebGrounding/NovaWebGrounding.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/parser": "^8.47.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-n8n-nodes-base": "^1.16.4",
+    "n8n-workflow": "*",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.0.0"
+  }
+}

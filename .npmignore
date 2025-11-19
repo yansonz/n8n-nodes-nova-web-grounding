@@ -1,0 +1,10 @@
+src/
+tsconfig.json
+.git/
+.gitignore
+*.test.ts
+*.spec.ts
+coverage/
+.nyc_output/
+.vscode/
+.idea/

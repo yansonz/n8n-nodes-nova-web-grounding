@@ -1,0 +1,58 @@
+{
+  "name": "NovaWebGrounding",
+  "displayName": "Nova Web Grounding",
+  "icon": "file:nova-web-grounding.svg",
+  "group": ["transform"],
+  "version": 1,
+  "description": "Search real-time information from the web using Amazon Nova Web Grounding",
+  "defaults": {
+    "name": "Nova Web Grounding"
+  },
+  "codex": {
+    "categories": ["AI"],
+    "subcategories": {
+      "AI": ["Tools"]
+    },
+    "resources": {
+      "primaryDocumentation": [
+        {
+          "url": "https://aws.amazon.com/ko/blogs/aws/build-more-accurate-ai-applications-with-amazon-nova-web-grounding/"
+        }
+      ]
+    }
+  },
+  "usableAsTool": true,
+  "toolDescription": "Search real-time information from the web using Amazon Nova Web Grounding. This tool enables the AI to access current information beyond its training data.",
+  "inputs": ["main"],
+  "outputs": ["main"],
+  "credentials": [
+    {
+      "name": "aws",
+      "required": true
+    }
+  ],
+  "properties": [
+    {
+      "displayName": "Model",
+      "name": "modelId",
+      "type": "options",
+      "options": [
+        {
+          "name": "Nova Premier v1:0",
+          "value": "us.amazon.nova-premier-v1:0"
+        }
+      ],
+      "default": "us.amazon.nova-premier-v1:0",
+      "required": true,
+      "description": "Select Nova model to use"
+    },
+    {
+      "displayName": "Query",
+      "name": "query",
+      "type": "string",
+      "default": "",
+      "required": true,
+      "description": "Search query for web grounding"
+    }
+  ]
+}
